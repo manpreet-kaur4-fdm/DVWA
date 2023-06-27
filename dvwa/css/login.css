@@ -5,6 +5,20 @@ body {
 	color: #6b6b6b;
 }
 
+.topnav {
+	background-color:#F4F4F4;
+	overflow:hidden;
+}
+
+.topnav a {
+	float:none;
+	color:#04AA6D;
+	text-align:center;
+	padding:14px 16px;
+	text-decoration:none;
+	font-size:17px;
+}
+
 #wrapper {
 	text-align: center;
 	margin: 0 auto;
@@ -54,6 +68,6 @@ fieldset {
 }
 
 p {
-	font-size: 10px;
+	font-size: 15px;
 }
 
