@@ -6,7 +6,7 @@ require_once DVWA_WEB_PAGE_TO_ROOT . 'dvwa/includes/dvwaPage.inc.php';
 dvwaPageStartup( array( 'authenticated' ) );
 
 $page = dvwaPageNewGrab();
-$page[ 'title' ]   = 'Vulnerability: Stored Cross Site Scripting (XSS)' . $page[ 'title_separator' ].$page[ 'title' ];
+$page[ 'title' ]   = 'Feedback Form'. $page[ 'title_separator' ].$page[ 'title' ];
 $page[ 'page_id' ] = 'xss_s';
 $page[ 'help_button' ]   = 'xss_s';
 $page[ 'source_button' ] = 'xss_s';
@@ -38,24 +38,24 @@ require_once DVWA_WEB_PAGE_TO_ROOT . "vulnerabilities/xss_s/source/{$vulnerabili
 
 $page[ 'body' ] .= "
 <div class=\"body_padded\">
-	<h1>Vulnerability: Stored Cross Site Scripting (XSS)</h1>
+	<h1>Feedback Form</h1>
 
 	<div class=\"vulnerable_code_area\">
 		<form method=\"post\" name=\"guestform\" \">
 			<table width=\"550\" border=\"0\" cellpadding=\"2\" cellspacing=\"1\">
 				<tr>
-					<td width=\"100\">Name *</td>
-					<td><input name=\"txtName\" type=\"text\" size=\"30\" maxlength=\"10\"></td>
+					<td width=\"100\">Subject *</td>
+					<td><input name=\"txtName\" type=\"text\" size=\"30\" maxlength=\"30\"></td>
 				</tr>
 				<tr>
-					<td width=\"100\">Message *</td>
-					<td><textarea name=\"mtxMessage\" cols=\"50\" rows=\"3\" maxlength=\"50\"></textarea></td>
+					<td width=\"100\">Comments *</td>
+					<td><textarea name=\"mtxMessage\" cols=\"50\" rows=\"3\" maxlength=\"100\"></textarea></td>
 				</tr>
 				<tr>
 					<td width=\"100\">&nbsp;</td>
 					<td>
-						<input name=\"btnSign\" type=\"submit\" value=\"Sign Guestbook\" onclick=\"return validateGuestbookForm(this.form);\" />
-						<input name=\"btnClear\" type=\"submit\" value=\"Clear Guestbook\" onClick=\"return confirmClearGuestbook();\" />
+						<input name=\"btnSign\" type=\"submit\" value=\"Submit Feedback\" onclick=\"return validateGuestbookForm(this.form);\" />
+						<input name=\"btnClear\" type=\"submit\" value=\"Clear Feedback\" onClick=\"return confirmClearGuestbook();\" />
 					</td>
 				</tr>
 			</table>\n";
@@ -72,14 +72,7 @@ $page[ 'body' ] .= "
 	" . dvwaGuestbook() . "
 	<br />
 
-	<h2>More Information</h2>
-	<ul>
-		<li>" . dvwaExternalLinkUrlGet( 'https://owasp.org/www-community/attacks/xss' ) . "</li>
-		<li>" . dvwaExternalLinkUrlGet( 'https://owasp.org/www-community/xss-filter-evasion-cheatsheet' ) . "</li>
-		<li>" . dvwaExternalLinkUrlGet( 'https://en.wikipedia.org/wiki/Cross-site_scripting' ) . "</li>
-		<li>" . dvwaExternalLinkUrlGet( 'http://www.cgisecurity.com/xss-faq.html' ) . "</li>
-		<li>" . dvwaExternalLinkUrlGet( 'http://www.scriptalert1.com/' ) . "</li>
-	</ul>
+	
 </div>\n";
 
 dvwaHtmlEcho( $page );
