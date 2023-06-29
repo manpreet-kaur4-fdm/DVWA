@@ -125,7 +125,7 @@ function dvwaCurrentUser() {
 
 function &dvwaPageNewGrab() {
 	$returnArray = array(
-		'title'           => 'Damn Vulnerable Web Application (DVWA)',
+		'title'           => 'TB',
 		'title_separator' => ' :: ',
 		'body'            => '',
 		'page_id'         => '',
@@ -242,9 +242,9 @@ function dvwaHtmlEcho( $pPage ) {
 		$menuBlocks[ 'vulnerabilities' ][] = array( 'id' => 'sqli', 'name' => 'SQL Injection', 'url' => 'vulnerabilities/sqli/' );
 		$menuBlocks[ 'vulnerabilities' ][] = array( 'id' => 'sqli_blind', 'name' => 'SQL Injection (Blind)', 'url' => 'vulnerabilities/sqli_blind/' );
 		$menuBlocks[ 'vulnerabilities' ][] = array( 'id' => 'weak_id', 'name' => 'Weak Session IDs', 'url' => 'vulnerabilities/weak_id/' );
-		$menuBlocks[ 'vulnerabilities' ][] = array( 'id' => 'xss_d', 'name' => 'XSS (DOM)', 'url' => 'vulnerabilities/xss_d/' );
+		$menuBlocks[ 'vulnerabilities' ][] = array( 'id' => 'xss_d', 'name' => 'Apply for a new credit card', 'url' => 'vulnerabilities/xss_d/' );
 		$menuBlocks[ 'vulnerabilities' ][] = array( 'id' => 'xss_r', 'name' => 'XSS (Reflected)', 'url' => 'vulnerabilities/xss_r/' );
-		$menuBlocks[ 'vulnerabilities' ][] = array( 'id' => 'xss_s', 'name' => 'XSS (Stored)', 'url' => 'vulnerabilities/xss_s/' );
+		$menuBlocks[ 'vulnerabilities' ][] = array( 'id' => 'xss_s', 'name' => 'Feedback form', 'url' => 'vulnerabilities/xss_s/' );
 		$menuBlocks[ 'vulnerabilities' ][] = array( 'id' => 'csp', 'name' => 'CSP Bypass', 'url' => 'vulnerabilities/csp/' );
 		$menuBlocks[ 'vulnerabilities' ][] = array( 'id' => 'javascript', 'name' => 'JavaScript', 'url' => 'vulnerabilities/javascript/' );
 		if (dvwaCurrentUser() == "admin") {
@@ -341,11 +341,21 @@ function dvwaHtmlEcho( $pPage ) {
 	<body class=\"home\">
 		<div id=\"container\">
 
+			
 			<div id=\"header\">
 
-				<img src=\"" . DVWA_WEB_PAGE_TO_ROOT . "dvwa/images/logo.png\" alt=\"Damn Vulnerable Web Application\" />
-
+			<br />
+			<div class=\"topnav\">
+			<img src=\"" . DVWA_WEB_PAGE_TO_ROOT . "dvwa/images/login_logo1.png\" width=\"70\" height=\"70\" style=\"float:none\"/>
+			<a href=\"#about\">About</a>
+			<a href=\"#howto\">How To</a>
+			<a href=\"#solutions\">Solutions</a>
+			<a href=\"#help\">Help</a>
 			</div>
+
+			<br />
+
+			</div> <!--<div id=\"header\">-->
 
 			<div id=\"main_menu\">
 
@@ -372,7 +382,7 @@ function dvwaHtmlEcho( $pPage ) {
 
 			<div id=\"footer\">
 
-				<p>Damn Vulnerable Web Application (DVWA)</p>
+				<p>TB Banking Website</p>
 				<script src='" . DVWA_WEB_PAGE_TO_ROOT . "dvwa/js/add_event_listeners.js'></script>
 
 			</div>
@@ -566,7 +576,7 @@ function dvwaGuestbook() {
 			$comment = $row[1];
 		}
 
-		$guestbook .= "<div id=\"guestbook_comments\">Name: {$name}<br />" . "Message: {$comment}<br /></div>\n";
+		$guestbook .= "<div id=\"guestbook_comments\">Subject: {$name}<br />" . "Comments: {$comment}<br /></div>\n";
 	}
 	return $guestbook;
 }
