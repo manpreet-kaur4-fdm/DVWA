@@ -38,9 +38,7 @@ require_once DVWA_WEB_PAGE_TO_ROOT . "vulnerabilities/xss_s/source/{$vulnerabili
 
 $page[ 'body' ] .= "
 <div class=\"body_padded\">
-	<h1>Feedback Form</h1>
-
-	<div class=\"vulnerable_code_area\">
+    <div class=\"vulnerable_code_area\">
 		<form method=\"post\" name=\"guestform\" \">
 			<table width=\"550\" border=\"0\" cellpadding=\"2\" cellspacing=\"1\">
 				<tr>
