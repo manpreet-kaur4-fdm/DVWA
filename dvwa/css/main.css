@@ -7,6 +7,20 @@ body {
 	position: relative;
 }
 
+.topnav {
+	background-color:#F4F4F4;
+	overflow:hidden;
+}
+
+.topnav a {
+	float:none;
+	color:#04AA6D;
+	text-align:center;
+	padding:14px 16px;
+	text-decoration:none;
+	font-size:17px;
+}
+
 body.home {
 	background: #e7e7e7;
 }
@@ -118,8 +132,8 @@ div#container {
 div#header {
 	padding: 10px;
 	overflow: hidden;
-	background: #2f2f2f;
-	border-bottom: 5px solid #A1CC33;
+	background-color: #F4F4F4;
+	border-bottom: 5px solid #000000;
 	text-align: center;
 }
 
